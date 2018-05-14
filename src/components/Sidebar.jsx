@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = () => (
+const Sidebar = props => (
   <nav className="bg-secondary sidebar">
     <ul className="nav nav-pills flex-column">
 
@@ -15,16 +15,16 @@ const Sidebar = () => (
         <a className="nav-link" href="#">Filter by City:</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Manchester</a>
+        <a className="nav-link" href="#" onClick={() => props.onCityClick('Manchester')}>Manchester</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Liverpool</a>
+        <a className="nav-link" href="#" onClick={() => props.onCityClick('Liverpool')}>Liverpool</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Sheffield</a>
+        <a className="nav-link" href="#" onClick={() => props.onCityClick('Sheffield')}>Sheffield</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Leeds</a>
+        <a className="nav-link" href="#" onClick={() => props.onCityClick('Leeds')}>Leeds</a>
       </li>
     </ul>
   </nav>
