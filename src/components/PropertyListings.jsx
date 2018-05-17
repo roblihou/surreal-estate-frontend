@@ -31,9 +31,20 @@ class PropertyListings extends React.Component {
       <React.Fragment>
         <div className="listings-container">
           <div className="sidebar">
-            <Sidebar onCityClick={(cityName) => {
+            <Sidebar
+              onCityClick={(cityName) => {
                 const filteredProperties = this.state.initialListings.filter(listing => listing.city === cityName);
                 this.setState({ listings: filteredProperties });
+              }}
+
+              orderByPrice={(ordering) => {
+                const orderedProperties = this.state.listings.sort((a, b) => {
+                  if (ordering === 'ascending') {
+                     return a.price - b.price;
+                  }
+                  return b.price - a.price;
+                });
+                this.setState({ listings: orderedProperties });
               }}
             />
           </div>
